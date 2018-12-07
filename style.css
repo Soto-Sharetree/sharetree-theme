@@ -610,6 +610,26 @@ img {
     line-height: 24px;
     margin: 0 0 20px;
 }
+.product-item-subtitle a::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #0e4194;
+    border-right: 1px solid #0e4194;
+    display: inline-block;
+    transform-origin: center center;
+    transform: rotate(45deg);
+    margin-left: 4px;
+
+    -webkit-transition: border .2s ease-out;
+    -moz-transition: border .2s ease-out;
+    -ms-transition: border .2s ease-out;
+    -o-transition: border .2s ease-out;
+    transition: border .2s ease-out;
+}
+.product-item-subtitle a:hover::after {
+    border-color: #859eab;
+}
 .product-item-excerpt {
     font-size: 14px;
     line-height: 20px;
