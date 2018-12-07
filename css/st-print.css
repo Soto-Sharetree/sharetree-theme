@@ -1,0 +1,86 @@
+@page {
+    margin: 0.5cm;
+}
+
+body #header.header_position {
+    position: relative!important;
+    top: 0!important;
+    margin: 0!important;
+}
+body #middle.cmsms_middle_margin {
+    margin-top: 0!important;
+}
+body #header > .header_inner {
+    padding-top: 0!important;
+    height: 150px!important;
+}
+
+body .cmsms_responsive #header > .header_inner > a.logo {
+    position: absolute;
+    top: 30px!important;
+    left: 0;
+    display: inline-block;
+    -webkit-transition: top .2s ease-in-out;
+    -moz-transition: top .2s ease-in-out;
+    -ms-transition: top .2s ease-in-out;
+    -o-transition: top .2s ease-in-out;
+    transition: top .2s ease-in-out;
+}
+body #header .header_inner nav {
+    left: auto;
+    right: 0;
+    top: 55px;
+}
+.cmsms_dynamic_cart, .search_but {
+    display: none!important;
+}
+body .phone_number_but {
+    right: 0;
+    margin: 0 15px 0;
+    top: 30px!important;
+}
+#navigation > li > a {
+    min-width: 85px!important;
+}
+body #middle_content a {
+    display: none;
+}
+#text-chambers-full-content {
+    display: block!important;
+}
+
+.print-break-before {
+    page-break-before: always;
+}
+.print-break-after {
+    page-break-after: always;
+}
+
+#slide_top {
+    display: none!important;
+}
+* {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+ul, img {
+   page-break-inside: avoid;
+}
+.cmsms_cc {
+    overflow: visible;
+}
+.cmsms_cc:before, .cmsms_cc:after {
+    content: "";
+    display: table;
+}
+.cmsms_cc:after {
+    clear: both;
+}
+.st-image-box-content {
+    display: none;
+}
+.st-image-box {
+    overflow: visible;
+    
+}
