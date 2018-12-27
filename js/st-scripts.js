@@ -54,6 +54,17 @@
             "deeplinking": false,
             "social_tools": ""
         });
+        $('.rental-chambers .chambers-list-table').on('click', function (e){
+            e.preventDefault();
+            var $heading = $(this), $card = $heading.next('.chambers-card');
+            console.log($card);
+            if($card.hasClass('hidden')){
+                $heading.find('.read-more').html('Hide details<span class="dashicons dashicons-arrow-up-alt2"></span>');
+            }else{
+                $heading.find('.read-more').html('Reveal details<span class="dashicons dashicons-arrow-right-alt2"></span>');
+            }
+            $card.toggleClass('hidden');
+        });
         if($(window).width() > 767){
             productPageCaptionHeight();
         }

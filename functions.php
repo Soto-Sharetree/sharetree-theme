@@ -16,7 +16,7 @@ function st_custom_script(){
     //this is the chambers rental page, using ID in case slug or page title is changed
     if ( is_page( 6046 ) ) :
 
-        wp_enqueue_script('chamber-accordion', get_stylesheet_directory_uri() . '/js/chambers.js', array('jquery'), NULL, true);
+        //wp_enqueue_script('chamber-accordion', get_stylesheet_directory_uri() . '/js/chambers.js', array('jquery'), NULL, true);
         wp_enqueue_style( 'dashicons' );
 
     endif;

@@ -714,6 +714,9 @@ p.less-padding {
     border-bottom: 1px solid #0e4194;
     padding-bottom: 40px;
 }
+.chambers-card:not(.hidden) + .chambers-list {
+    border-top: 0;
+}
 
 .chambers-list h2 {
     font-weight: bold;
