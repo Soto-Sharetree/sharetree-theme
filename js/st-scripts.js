@@ -54,10 +54,12 @@
             "deeplinking": false,
             "social_tools": ""
         });
+        $('.rental-chambers .chambers-list-table .pdf a').on('click', function (e){
+            e.stopPropagation();
+        });
         $('.rental-chambers .chambers-list-table').on('click', function (e){
             e.preventDefault();
             var $heading = $(this), $card = $heading.next('.chambers-card');
-            console.log($card);
             if($card.hasClass('hidden')){
                 $heading.find('.read-more').html('Hide details<span class="dashicons dashicons-arrow-up-alt2"></span>');
             }else{
