@@ -98,3 +98,14 @@ require 'inc/custom-post-types.php';
  */
 require 'inc/custom-permissions.php';
 
+add_action( 'wp_footer', 'redirect_cf7' );
+ 
+function redirect_cf7() {
+?>
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+       location = 'https://www.sharetree.co.uk/thank-you/';
+}, false );
+</script>
+<?php
+}
