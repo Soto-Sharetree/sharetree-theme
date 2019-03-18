@@ -114,3 +114,35 @@ function redirect_cf7() {
     </script>
 	<?php
 }
+function st_page_top_two_col_content(){
+    $enable_top_content = get_field('enable_top_content');
+    $left_column_content = get_field('left_column_content');
+    $enable_search_box = get_field('enable_search_box');
+    $right_column_content = get_field('right_column_content');
+    if($enable_top_content && ($left_column_content || $enable_search_box || $right_column_content)):
+        ?>
+        <div class="cmsms_cc clearfix">
+            <?php if($left_column_content): ?>
+                <div class="two_third st-top-content-col-left first_column">
+                    <div class="st-top-content-col-inner">
+                        <div class="st-top-content-text"><?php echo do_shortcode($left_column_content); ?></div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if($right_column_content || $enable_search_box): ?>
+                <div class="one_third st-top-content-col-right">
+                    <div class="st-top-content-col-inner">
+                        <?php if($enable_search_box): ?>
+                            <div class="st-top-content-search-wrap clearfix"><?php get_search_form(); ?></div>
+                        <?php endif; ?>
+                        <?php if($right_column_content): ?>
+                            <div class="st-top-content-text"><?php echo do_shortcode($right_column_content); ?></div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="one_first first_column" data-folder="divider" data-type="divider"><div class="divider"></div></div>
+            <div class="cl"></div>
+        </div>
+    <?php endif;
+}

@@ -4,8 +4,12 @@
  * @subpackage Industrial
  * @since Industrial 1.0
  * 
- * Template Name: With Banner
+ * Default Page Template
+ * Created by CMSMasters
+ * 
  */
+
+
 get_header();
 
 
@@ -33,7 +37,19 @@ echo '<div class="entry">' . "\n\t";
 
 if (have_posts()) : the_post();
 	if (has_post_thumbnail() && $cmsms_heading != 'parallax') {
-        echo '<div class="stpt-featured-image">'. get_the_post_thumbnail(get_the_ID(), 'full') .'</div>';
+		if ($cmsms_layout == 'r_sidebar' || $cmsms_layout == 'l_sidebar') {
+			echo '<div class="cmsms_media">' . "\n\t";
+			
+			cmsms_thumb(get_the_ID(), 'post-thumbnail', false, 'img_' . get_the_ID(), true, false, true, true, false);
+			
+			echo "\r" . '</div>';
+		} else {
+			echo '<div class="cmsms_media">' . "\n\t";
+			
+			cmsms_thumb(get_the_ID(), 'full-thumb', false, 'img_' . get_the_ID(), true, false, true, true, false);
+			
+			echo "\r" . '</div>';
+		}
 	}
 
 	st_page_top_two_col_content();

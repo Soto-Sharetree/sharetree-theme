@@ -654,6 +654,11 @@ img {
     padding: 0 0 0 40px;
     margin: 0 0 25px;
 }
+.st-nested-list ul {
+    margin: 10px 0;
+    padding: 0 0 0 40px;
+}
+.st-nested-list li,
 .content_wrap div[data-folder="text"] ul.st-nested-list li {
     border: 0 none;
     padding: 0;
@@ -664,12 +669,9 @@ img {
     list-style: inherit;
     position: static;
 }
+.st-nested-list li:before,
 .content_wrap div[data-folder="text"] ul.st-nested-list li:before {
     display: none
-}
-.st-nested-list ul {
-    margin: 10px 0;
-    padding: 0 0 0 40px;
 }
 
 
@@ -876,6 +878,9 @@ body .toggles .tab_content {
 }
 body .toggles .togg.togg-no-content .tab_content {
     display: none!important;
+}
+.st-top-content-search-wrap {
+    margin-bottom: 25px;
 }
 /* 20. MEDIA QUERIES               */
 

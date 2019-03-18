@@ -35,7 +35,9 @@ if (have_posts()) : the_post();
 	if (has_post_thumbnail() && $cmsms_heading != 'parallax') {
         echo '<div class="stpt-featured-image">'. get_the_post_thumbnail(get_the_ID(), 'full') .'</div>';
 	}
-	
+
+	st_page_top_two_col_content();
+
 	the_content();
 	
 	wp_link_pages(array( 

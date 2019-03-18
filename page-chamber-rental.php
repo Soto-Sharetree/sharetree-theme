@@ -38,7 +38,12 @@ if (have_posts()) : the_post();
 	} ?>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php
+
+		st_page_top_two_col_content();
+
+		the_content();
+		?>
 	</div>	
 
 	<?php get_template_part ( 'partials/loops/loop-chambers' ); ?>
