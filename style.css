@@ -29,13 +29,15 @@ Template: industrial
 .clearfix:before,
 .clearfix:after,
 .st-innerrcols-wrap:after,
-.st-innerrcols-wrap:before{
+.st-innerrcols-wrap:before,
+.cmsms_cc:before{
     display: table;
     content: " ";
 }
 
 .clearfix:after,
-.st-innerrcols-wrap:after{
+.st-innerrcols-wrap:after,
+.cmsms_cc:after {
     clear: both;
 }
 #header nav.nav_numbering #navigation li {
