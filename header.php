@@ -286,11 +286,8 @@ if ($cmsms_option[CMSMS_SHORTNAME . '_responsive']) {
 		
 		?>
 		</nav>
+        <?php get_search_form(); ?>
 		<?php
-			if ($cmsms_option[CMSMS_SHORTNAME . '_header_search']) {
-				get_search_form();
-			}
-		
 			if ($cmsms_option[CMSMS_SHORTNAME . '_header_social'] && isset($cmsms_option[CMSMS_SHORTNAME . '_social_icons'])) {
 				echo '<ul class="social_icons">' . "\n";
 				

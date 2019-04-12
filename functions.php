@@ -6,7 +6,10 @@
  * and open the template in the editor.
  */
 
-
+function st_register_parent__styles(){
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+}
+add_action('wp_enqueue_scripts', 'st_register_parent__styles', 10);
 function st_custom_script() {
 	wp_enqueue_script( 'prettyPhoto', get_stylesheet_directory_uri() . '/assets/prettyPhoto/js/jquery.prettyPhoto.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'st-scripts', get_stylesheet_directory_uri() . '/js/st-scripts.js', array(
@@ -36,6 +39,9 @@ function st_print_style() {
 add_action( 'wp_head', 'st_print_style', 100 );
 
 function st_image_overlay_box_wrap( $atts, $content = null ) {
+    $col = '';
+	$class = '';
+	$single_row = '';
 	extract( shortcode_atts( array(
 		'col'        => '5',
 		'class'      => '',
@@ -52,6 +58,12 @@ function st_image_overlay_box_wrap( $atts, $content = null ) {
 }
 
 function st_image_overlay_box( $atts, $content = null ) {
+    $title = '';
+    $link = '';
+    $rel = '';
+    $image = '';
+    $class = '';
+
 	extract( shortcode_atts( array(
 		'title' => '',
 		'link'  => '',

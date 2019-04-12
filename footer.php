@@ -127,7 +127,13 @@ echo '<a href="javascript:void(0);" id="slide_top"></a>' . "\n";
 ?>
 </div>
 <!-- _________________________ Finish Container _________________________ -->
-
+<?php
+if(!empty($cmsms_option[CMSMS_SHORTNAME . '_footer_copyright']) ||
+   ($cmsms_option[CMSMS_SHORTNAME . '_footer_additional_content'] == 'text' && !empty($cmsms_option[CMSMS_SHORTNAME . '_footer_html'])) ||
+   ($cmsms_option[CMSMS_SHORTNAME . '_footer_additional_content'] == 'social' && isset($cmsms_option[CMSMS_SHORTNAME . '_social_icons'])) ||
+   ($cmsms_option[CMSMS_SHORTNAME . '_footer_additional_content'] == 'nav' && has_nav_menu('footer'))
+):
+?>
 <!-- _________________________ Start Footer _________________________ -->
 	<footer id="footer" role="contentinfo">
 		<div class="footer_inner">
@@ -171,7 +177,7 @@ echo '<a href="javascript:void(0);" id="slide_top"></a>' . "\n";
 		</div>
 	</footer>
 <!-- _________________________ Finish Footer _________________________ -->
-
+<?php endif; ?>
 </section>
 <!-- _________________________ Finish Page _________________________ -->
 

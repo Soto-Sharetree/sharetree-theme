@@ -4,7 +4,10 @@
 
 <section class="chambers-list chambers-list-table">	
 
-	<h2 class="title"><?php the_title(); ?></h2>
+    <div class="st-chamber-list-title">
+        <h2 class="title"><?php the_title(); ?></h2>
+        <p><?php the_field( 'short_description' ); ?></p>
+    </div>
 	<p class="pdf"> 
 		<?php if( $file ): ?>
 			<a href="<?php echo $file['url']; ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();?>/images/pdf-icon.png" alt="View PDF"></a>

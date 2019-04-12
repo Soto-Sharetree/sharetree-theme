@@ -3,7 +3,7 @@ Theme Name: Share Tree Theme
 Template: industrial
 */
 
-@import url("../industrial/style.css");
+
 
 /* 1. GENERAL STYLES                      */
 
@@ -40,6 +40,37 @@ Template: industrial
 .cmsms_cc:after {
     clear: both;
 }
+body #header > .header_inner,
+body #header.fixed_header > .header_inner {
+    height: 114px!important;
+}
+body #middle.cmsms_middle_margin,
+body #header.fixed_header + *{
+    margin-top: 114px!important;;
+}
+body #header > .header_inner > a.logo,
+body #header.fixed_header > .header_inner > a.logo{
+    top: 28px;
+}
+body #header nav,
+body #header.fixed_header nav{
+    top: 54px
+}
+body .cmsms_dynamic_cart {
+    position: absolute;
+    right: 140px;
+    top: 13px!important;
+    margin: 0!important;
+}
+body .cmsms_dynamic_cart .cmsms_dynamic_cart_button {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+}
+body .cmsms_dynamic_cart_button::before {
+    left: 9px;
+    top: 8px;
+}
 #header nav.nav_numbering #navigation li {
     list-style: none;
 }
@@ -48,13 +79,13 @@ body #navigation > li > a{
 }
 .phone_number_but {
     position: absolute;
-    top: 40px;
-    right: 190px;
+    top: 25px;
+    right: 0;
+    left: auto;
     width: auto;
     text-align: right;
-    left: 257px;
-    margin: 0 5%;
-    padding-left: 15px;
+    margin: 0;
+    padding: 0;
 }
 .phone_number_but a{
     font-size: 18px;
@@ -265,11 +296,18 @@ body .headline .heading_subtitle.heading_title_nomg {
 body #bottom {
     background-color: #f6f7f7;
     border-top: 1px solid #c3c3c2;
-    padding-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 5px;
 }
 body #footer {
     background-color: #f6f7f7;
     padding-top: 0;
+}
+.bottom_content .widget:last-child {
+    padding-bottom: 0;
+}
+.bottom_content .widget p:last-child {
+    padding-bottom: 0;
 }
 body #bottom, 
 body #bottom small, 
@@ -571,7 +609,7 @@ img {
     box-sizing: border-box;
 }
 .st-form-field textarea{
-    min-height: 140px;
+    min-height: 144px;
 }
 .st-form-row-recaptcha {
     margin-bottom: 15px;
@@ -730,6 +768,14 @@ p.less-padding {
     border: none;
     margin-bottom: 0;
 }
+.chambers-list .st-chamber-list-title h2 {
+    padding: 0;
+    margin-bottom: 5px;
+}
+.chambers-list .st-chamber-list-title p {
+    margin: 0 0 5px;
+    padding: 0;
+}
 .chambers-list h2:before {
     display: none;
 }
@@ -881,6 +927,10 @@ body .toggles .togg.togg-no-content .tab_content {
 }
 .st-top-content-search-wrap {
     margin-bottom: 25px;
+    padding-top: 6px;
+}
+.contact-map iframe {
+    width: 100%;
 }
 /* 20. MEDIA QUERIES               */
 
@@ -915,7 +965,20 @@ body .toggles .togg.togg-no-content .tab_content {
     }
 }
 /* 20.2 MAX WIDTH 1024px           */
-@media only screen and (max-width: 1024px) {  
+@media only screen and (max-width: 1024px) {
+    body .cmsms_responsive #middle.cmsms_middle_margin {
+        margin-top: 0px!important;
+    }
+    body .cmsms_responsive #header > .header_inner {
+        height: auto!important;
+    }
+    body #header {
+        padding-bottom: 20px;
+    }
+    body .logo {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
     .search_but.close_but {
         z-index: 10000;
     }
@@ -1036,7 +1099,7 @@ body .toggles .togg.togg-no-content .tab_content {
         left: auto;
         margin: 0;
         padding: 0;
-        top: 103px;
+        top: 97px;
     }
     body #header .cmsms_dynamic_cart {
         position: absolute;
@@ -1059,7 +1122,20 @@ body .toggles .togg.togg-no-content .tab_content {
     }
 }
 
-
+@media only screen and (min-width: 768px) {
+    .bottom_content > div {
+        text-align: center;
+    }
+    .bottom_content > div:first-child {
+        text-align: left;
+    }
+    .bottom_content > div:last-child {
+        text-align: right;
+    }
+    .bottom_content > div .widget {
+        display: inline-block;
+    }
+}
 /* 20.3 BETWEEN 768px and 1023px   */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .phone_number_but {
@@ -1114,7 +1190,10 @@ body .toggles .togg.togg-no-content .tab_content {
 
 
 /* 20.5 MAX WIDTH 767px            */
-@media only screen and (max-width: 767px) {  
+@media only screen and (max-width: 767px) {
+    .st-top-content-search-wrap {
+        display: none;
+    }
     .phone_number_but {
         text-align: right;
         top: 15px;
@@ -1137,6 +1216,9 @@ body .toggles .togg.togg-no-content .tab_content {
     }
     .product-item-excerpt {
         margin-bottom: 20px;
+    }
+    .bottom_content .widget {
+        padding-bottom: 25px!important;
     }
 }
 
@@ -1235,7 +1317,7 @@ body .toggles .togg.togg-no-content .tab_content {
     }
 
     /* 10.1.2 COLUMN WIDTHS                 */
-    .chambers-list .title,
+    .chambers-list .st-chamber-list-title,
     .chambers-list .pdf,
     .chambers-list .volume,
     .chambers-list .temperature,
@@ -1244,7 +1326,7 @@ body .toggles .togg.togg-no-content .tab_content {
     .chambers-list .more-info {
         padding: 5px;
     }
-    .chambers-list .title {
+    .chambers-list .st-chamber-list-title {
         width: 250px;
     }
     .chambers-list .pdf {

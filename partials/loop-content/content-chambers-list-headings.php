@@ -1,6 +1,6 @@
 <section class="chambers-list chambers-list-headings" onclick="">
 
-	<p class="title">Rental chamber</p>
+    <div class="st-chamber-list-title"><p class="title">Rental chamber</p></div>
 	<p class="pdf">View PDF</p>
 
 	<div class="data-section">
